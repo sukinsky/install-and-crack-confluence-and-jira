@@ -15,10 +15,12 @@
 * [Licence Generator](https://drive.google.com/drive/folders/1QJzVjndzT0kQJkY74M2Oo0cRPGNb38TE?usp=sharing)
 
 ### clone repository
-    git clone https://github.com/keivankmd/install-and-crack-confluence.git
+    git clone https://github.com/sukinsky/install-and-crack-confluence-and-jira.git
 
 ### Your directory should have the following files
 --> Dockerfile
+<br/>
+--> Dockerfile-jira
 <br/>
 --> docker-compose.yml
 <br/>
@@ -33,12 +35,16 @@
 
 ## Run Dockerfile
     task build
+    task buildjira
 
 ## up docker compose file 
     task up
 
 ## Generating a license for your Confluence server. please Copy the generated code and paste it on the start page
     task gen -- "input serverID"
+
+## Generating a license for your Jira server. please Copy the generated code and paste it on the start page
+    task genjira -- "input serverID"
 
 ## If you have installed a plugin on confluence, you can use the following command to generate a license
     task plugin -- "input plugin app key"

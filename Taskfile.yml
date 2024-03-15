@@ -3,7 +3,7 @@ version: '3'
 tasks:
   build:
     cmds:
-      - docker build -t example.com/confluence:8.0.3 .
+      - docker build -t example.com/confluence:8.0.3 -f Dockerfile .
   
   push:
     cmds:
@@ -24,3 +24,16 @@ tasks:
   down:
     cmds:
       - docker compose down
+
+  buildjira:
+    cmds:
+      - docker build -t example.com/jira-software:9.12.5 -f Dockerfile-jira .
+  
+  pushjira:
+    cmds:
+      - docker push example.com/jira-software:9.12.5
+  
+  genjira:
+    cmds:
+      - java -jar atlassian-agent-license-generator.jar -d -m test@gmail.com -n BAT -p jira -o http://localhost -s {{.CLI_ARGS}}
+  
