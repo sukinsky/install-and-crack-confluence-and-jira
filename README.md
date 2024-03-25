@@ -1,4 +1,4 @@
-# Setup Confluence with PostgreSQL
+# Setup Confluence and Jira with PostgreSQL
 
 ## Dependencies:
 
@@ -56,3 +56,8 @@
 
 ## down docker compose file (optional)
     task down
+# Usable info for new installations
+## Watcher field
+The old plugin is notworking with Jira 9.x but there is a fork with corrected version
+    https://community.atlassian.com/t5/Jira-Software-questions/Is-there-an-alternative-to-burningcode-s-now-defunct-Jira/qaq-p/1779262
+    https://bitbucket.org/superoni/jira-watcher-field-plugin/downloads/
